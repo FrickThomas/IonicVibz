@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Connection</ion-title>
+  </ion-navbar>
+</ion-header>
+  
+<ion-content padding>
+  <form [formGroup]="homeForm">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button block (click)="onSignIn()">Sign in</button>
+    <button ion-button block outline (click)="onSignOn()">Sign on</button>
+    <span ion-text color="danger">{{ errorMessage }}</span>
+  </form>
+</ion-content>      
