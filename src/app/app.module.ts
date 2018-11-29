@@ -17,7 +17,12 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
 import { DashboardRequestPage } from '../pages/dashboard/dashboardRequest/dashboard.request';
 import { DashboardOfferPage } from '../pages/dashboard/dashboardOffer/dashboard.offer';
 import { DashboardClosePage } from '../pages/dashboard/dashboardClose/dashboard.close';
-import { EditProfilePage } from '../pages/profile/edit-profile/edit.profile';
+import { EditArtistProfilePage } from '../pages/profile/edit-profile/edit-artist-profile/edit.artist.profile';
+import { ProfileOrganizerPage } from '../pages/profile/profile-organizer/profile.organizer';
+import { ProfileOrganizerService } from '../services/profile.organizer.service';
+import { EditOrganizerProfilePage } from '../pages/profile/edit-profile/edit-organizer-profile/edit.organizer.profile';
+import { AddEventPage } from '../pages/add/add-event/add.event';
+import { AddSongPage } from '../pages/add/add-song/add.song';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,11 @@ import { EditProfilePage } from '../pages/profile/edit-profile/edit.profile';
     DashboardRequestPage,
     DashboardOfferPage,
     DashboardClosePage,
-    EditProfilePage
+    EditArtistProfilePage,
+    ProfileOrganizerPage,
+    EditOrganizerProfilePage,
+    AddEventPage,
+    AddSongPage
   ],
   imports: [
     BrowserModule,
@@ -50,11 +59,16 @@ import { EditProfilePage } from '../pages/profile/edit-profile/edit.profile';
     DashboardRequestPage,
     DashboardOfferPage,
     DashboardClosePage,
-    EditProfilePage
+    EditArtistProfilePage,
+    ProfileOrganizerPage,
+    EditOrganizerProfilePage,
+    AddEventPage,
+    AddSongPage
   ],
   providers: [
     ProfileArtistService,
     NewsViewArtistService,
+    ProfileOrganizerService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

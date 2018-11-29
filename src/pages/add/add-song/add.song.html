@@ -1,0 +1,19 @@
+<ion-header>
+        <ion-navbar >
+          <ion-buttons end>
+            <button ion-button clear (click)="dismissModal()">Annuler</button>
+          </ion-buttons>
+          <ion-title>Add song</ion-title>
+        </ion-navbar>    
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="addForm">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Title</ion-label>
+        <ion-input type="text" formControlName="title" clearInput></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

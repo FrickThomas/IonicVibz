@@ -1,0 +1,27 @@
+<ion-header>
+        <ion-navbar >
+          <ion-buttons end>
+            <button ion-button clear (click)="dismissModal()">Annuler</button>
+          </ion-buttons>
+          <ion-title>Edit your profile</ion-title>
+        </ion-navbar>    
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="editForm">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Firstname</ion-label>
+        <ion-input type="text" formControlName="firstName" clearInput></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Surename</ion-label>
+        <ion-input type="text" formControlName="sureName" clearInput></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>City</ion-label>
+        <ion-input type="text" formControlName="city" clearInput></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

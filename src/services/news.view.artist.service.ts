@@ -9,6 +9,7 @@ export class NewsViewArtistService {
         title: 'Soirée Disco',
         date: '24/11/18',
         address: '2 rue Saint-honoré',
+        description: 'soirée pour les amoureux de la disco',
         imagePath: ''
     };
 

@@ -5,30 +5,38 @@
 </ion-header>
 
 <ion-content padding>
+    <ion-item>
+        <ion-label>You are :</ion-label>
+        <ion-select [(ngModel)]="type">
+            <ion-option value="artist">Artist</ion-option>
+            <ion-option value="orga">Organizer</ion-option>
+        </ion-select>
+    </ion-item>
+
     <form [formGroup]="subscribeForm">
         <ion-list>
             <ion-item>
                 <ion-label floating>First Name</ion-label>
-                <ion-input type="text" formControlName="firstName"></ion-input>
+                <ion-input type="text" formControlName="firstName" clearInput></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label floating>Surename</ion-label>
-                <ion-input type="text" formControlName="sureName"></ion-input>
+                <ion-input type="text" formControlName="sureName" clearInput></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label floating>City</ion-label>
-                <ion-input type="text" formControlName="city"></ion-input>
+                <ion-input type="text" formControlName="city" clearInput></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label floating>Email</ion-label>
-                <ion-input type="email" formControlName="email"></ion-input>
+                <ion-input type="email" formControlName="email" clearInput></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label floating>Password</ion-label>
-                <ion-input type="password" formControlName="password"></ion-input>
+                <ion-input type="password" formControlName="password" clearInput></ion-input>
             </ion-item>
         </ion-list>
-        <button ion-button full (click)="onSubmitForm()">Submit</button>
-        <span ion-text color="danger">{{ errorMessage }}</span>
     </form>
+    <button ion-button full (click)="onSubmitForm()">Submit</button>
+    <span ion-text color="danger">{{ errorMessage }}</span>
 </ion-content>

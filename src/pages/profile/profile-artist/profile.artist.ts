@@ -3,7 +3,8 @@ import { Artist } from "../../../models/Artist";
 import { Subscription } from "rxjs/Subscription";
 import { ProfileArtistService } from "../../../services/profile.artist.service";
 import { ModalController } from "ionic-angular";
-import { EditProfilePage } from "../edit-profile/edit.profile";
+import { EditArtistProfilePage } from "../edit-profile/edit-artist-profile/edit.artist.profile";
+import { AddSongPage } from "../../add/add-song/add.song";
 
 
 @Component({
@@ -30,8 +31,13 @@ export class ProfileArtistPage implements OnInit {
         this.profileArtistService.emitArtist();
     }
 
-    onEditProfile() {
-        let modal = this.modalCtrl.create(EditProfilePage);
+    onEditArtistProfile() {
+        let modal = this.modalCtrl.create(EditArtistProfilePage);
+        modal.present();
+    }
+
+    onAddSong() {
+        let modal = this.modalCtrl.create(AddSongPage);
         modal.present();
     }
 }

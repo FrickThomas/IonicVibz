@@ -3,12 +3,12 @@ import { ViewController } from "ionic-angular";
 import { FormBuilder, FormGroup } from "@angular/forms";
 
 @Component({
-    selector: 'page-edit-profile',
-    templateUrl: 'edit.profile.html'
+    selector: "page-edit-organizer-profile",
+    templateUrl: "./edit.organizer.profile.html"
 })
 
-export class EditProfilePage implements OnInit {
-    
+export class EditOrganizerProfilePage implements OnInit {
+
     editForm: FormGroup;
     
     constructor(private viewCtrl: ViewController,
@@ -23,10 +23,9 @@ export class EditProfilePage implements OnInit {
     initForm() {
         //TODO: use the objet of the profile to init the form
         this.editForm = this.formBuilder.group({
-            pseudo: [''],
-            city: [''],
-            style: [''],
-            price: ['']
+            firstName: [''],
+            sureName: [''],
+            city: ['']
         });
     }
 
