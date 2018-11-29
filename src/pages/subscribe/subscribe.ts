@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { ViewController } from "ionic-angular";
 
 @Component({
     selector: 'page-subcribe',
@@ -10,7 +11,8 @@ export class SubscribePage implements OnInit {
     
     subscribeForm: FormGroup;
 
-    constructor(private formBuilder: FormBuilder) {
+    constructor(private formBuilder: FormBuilder,
+                private viewCtrl: ViewController) {
 
     }
 
@@ -20,6 +22,7 @@ export class SubscribePage implements OnInit {
 
     initForm() {
         this.subscribeForm = this.formBuilder.group({
+            type: ['', Validators.required],
             firstName: ['', Validators.required],
             sureName: ['', Validators.required],
             city: ['', Validators.required],
@@ -30,5 +33,9 @@ export class SubscribePage implements OnInit {
 
     onSubmitForm() {
         
+    }
+
+    dismissModal() {
+        this.viewCtrl.dismiss();
     }
 }

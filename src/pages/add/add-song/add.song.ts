@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ViewController } from "ionic-angular";
 
 @Component({
@@ -9,7 +9,7 @@ import { ViewController } from "ionic-angular";
 
 export class AddSongPage {
     
-    addForm: FormGroup;
+    addSongForm: FormGroup;
     
     constructor(private viewCtrl: ViewController,
                 private formBuilder: FormBuilder) {
@@ -22,11 +22,8 @@ export class AddSongPage {
 
     initForm() {
         //TODO: use the objet of the profile to init the form
-        this.addForm = this.formBuilder.group({
-            title: [''],
-            date: [''],
-            address: [''],
-            description: ['']
+        this.addSongForm = this.formBuilder.group({
+            title: ['', Validators.required]
         });
     }
 
@@ -34,4 +31,7 @@ export class AddSongPage {
         this.viewCtrl.dismiss();
     }
     
+    onAddSong() {
+
+    }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TabsPage } from '../tabs/tabs';
 import { SubscribePage } from '../subscribe/subscribe';
@@ -13,7 +13,8 @@ export class HomePage implements OnInit {
   homeForm: FormGroup;
 
   constructor(public navCtrl: NavController,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder,
+              private modalCtrl: ModalController) {
                 
   }
 
@@ -36,7 +37,8 @@ export class HomePage implements OnInit {
   }
 
   onSignOn() {
-    this.navCtrl.push(SubscribePage);
+    let modal = this.modalCtrl.create(SubscribePage);
+    modal.present();
   }
 
 }

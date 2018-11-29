@@ -16,7 +16,9 @@
         <ion-input type="password" formControlName="password"></ion-input>
       </ion-item>
     </ion-list>
-    <button ion-button block (click)="onSignIn()">Sign in</button>
+    <button ion-button 
+            block 
+            (click)="onSignIn()">Sign in</button>
     <button ion-button block outline (click)="onSignOn()">Sign on</button>
     <span ion-text color="danger">{{ errorMessage }}</span>
   </form>

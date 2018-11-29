@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ViewController } from "ionic-angular";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
     selector: "page-add-event",
@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 
 export class AddEventPage implements OnInit{
 
-    addForm: FormGroup;
+    addEventForm: FormGroup;
     
     constructor(private viewCtrl: ViewController,
                 private formBuilder: FormBuilder) {
@@ -22,15 +22,19 @@ export class AddEventPage implements OnInit{
 
     initForm() {
         //TODO: use the objet of the profile to init the form
-        this.addForm = this.formBuilder.group({
-            title: [''],
-            date: [''],
-            address: [''],
-            description: ['']
+        this.addEventForm = this.formBuilder.group({
+            title: ['', Validators.required],
+            date: ['', Validators.required],
+            address: ['', Validators.required],
+            description: ['', Validators.required]
         });
     }
 
     dismissModal() {
         this.viewCtrl.dismiss();
+    }
+
+    onAddEvent() {
+
     }
 }

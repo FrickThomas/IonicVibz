@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content padding>
-  <form [formGroup]="addForm">
+  <form [formGroup]="addSongForm">
     <ion-list>
       <ion-item>
         <ion-label floating>Title</ion-label>
@@ -16,4 +16,11 @@
       </ion-item>
     </ion-list>
   </form>
+  <ion-row text-center>
+    <ion-col><ion-icon class="icon-size" name="folder"></ion-icon></ion-col>
+  </ion-row>
+  <button ion-button 
+          full 
+          (click)="onAddSong()"
+          [disabled]="addSongForm.invalid">Submit</button>
 </ion-content>

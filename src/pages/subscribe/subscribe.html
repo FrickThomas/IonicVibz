@@ -1,20 +1,22 @@
 <ion-header>
     <ion-navbar>
+            <ion-buttons end>
+                <button ion-button clear (click)="dismissModal()">Annuler</button>
+            </ion-buttons>
         <ion-title>Sign on</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <ion-item>
-        <ion-label>You are :</ion-label>
-        <ion-select [(ngModel)]="type">
-            <ion-option value="artist">Artist</ion-option>
-            <ion-option value="orga">Organizer</ion-option>
-        </ion-select>
-    </ion-item>
-
     <form [formGroup]="subscribeForm">
         <ion-list>
+            <ion-item>
+                    <ion-label>You are :</ion-label>
+                    <ion-select formControlName="type">
+                        <ion-option value="artist">Artist</ion-option>
+                        <ion-option value="orga">Organizer</ion-option>
+                    </ion-select>
+            </ion-item>
             <ion-item>
                 <ion-label floating>First Name</ion-label>
                 <ion-input type="text" formControlName="firstName" clearInput></ion-input>
@@ -37,6 +39,8 @@
             </ion-item>
         </ion-list>
     </form>
-    <button ion-button full (click)="onSubmitForm()">Submit</button>
-    <span ion-text color="danger">{{ errorMessage }}</span>
+    <button ion-button 
+            full 
+            (click)="onSubmitForm()"
+            [disabled]="subscribeForm.invalid">Submit</button>
 </ion-content>
