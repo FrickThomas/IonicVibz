@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Artist } from "../../../models/Artist";
+import { Song } from "../../../models/Song"
 import { Subscription } from "rxjs/Subscription";
-import { ProfileArtistService } from "../../../services/profile.artist.service";
+import { ProfileArtistService } from "../../../services/profile/profile.artist.service";
 import { ModalController } from "ionic-angular";
 import { EditArtistProfilePage } from "../edit-profile/edit-artist-profile/edit.artist.profile";
 import { AddSongPage } from "../../add/add-song/add.song";
@@ -14,8 +15,11 @@ import { AddSongPage } from "../../add/add-song/add.song";
 
 export class ProfileArtistPage implements OnInit {
 
-    artist: Artist
+    artist: Artist;
     artistSubscription: Subscription;
+
+    songList: Song[];
+    songListSubcription: Subscription;
 
     constructor(private profileArtistService: ProfileArtistService,
                 private modalCtrl: ModalController) {
@@ -28,7 +32,15 @@ export class ProfileArtistPage implements OnInit {
                 this.artist = artist;
             }
         );
+
+        this.songListSubcription = this.profileArtistService.songList$.subscribe(
+            (songList: Song[]) => {
+                this.songList = songList;
+            }
+        );
+
         this.profileArtistService.emitArtist();
+        this.profileArtistService.emitSongList();
     }
 
     onEditArtistProfile() {

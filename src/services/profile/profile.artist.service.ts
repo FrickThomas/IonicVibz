@@ -1,11 +1,13 @@
 import { Subject } from "rxjs/Subject";
-import { Artist } from "../models/Artist";
+import { Artist } from "../../models/Artist";
+import { Song } from "../../models/Song";
 
 export class ProfileArtistService {
     
     artist$ = new Subject<Artist>();
+    songList$ = new Subject<Song[]>();
 
-    artist: Artist = {
+    private artist: Artist = {
         firstName: 'Thomas',
         sureName: 'Frick',
         pseudo: 'Tomarz',
@@ -17,7 +19,18 @@ export class ProfileArtistService {
         imagePath: ''
     };
 
+    private songList: Song[] = [
+        {
+            title: 'wake up',
+            artistName: 'Laurent Garnier'
+        }
+    ];
+
     emitArtist() {
         this.artist$.next(this.artist);
+    }
+
+    emitSongList() {
+        this.songList$.next(this.songList.slice());
     }
 }

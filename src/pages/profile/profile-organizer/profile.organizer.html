@@ -22,14 +22,14 @@
             <ion-icon name="add" item-end (click)="onAddEvent()"></ion-icon>
             <h2>Event : </h2>
         </ion-list-header>
-        <ion-card>
+        <ion-card *ngFor="let event of eventList">
             <ion-card-content>
                 <ion-row>
                     <ion-col col-3 align-self-center><img src="assets/imgs/picture.png"></ion-col>
                     <ion-col col-6>
-                        <h2>Soirée Disco</h2>
-                        <h3>2 rue Saint-honoré</h3>
-                        <h4>24/11/18</h4>
+                        <h2>{{ event.title }}</h2>
+                        <h3>{{ event.address }}</h3>
+                        <h4>{{ event.date }}</h4>
                     </ion-col>
                     <ion-col align-self-center><ion-icon name="trash" float-right></ion-icon></ion-col>
                 </ion-row>

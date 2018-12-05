@@ -1,3 +1,4 @@
-export class Event{
-    constructor(public title: string) {}
+export class Song{
+    constructor(public title: string,
+                public artistName: string) {}
 }

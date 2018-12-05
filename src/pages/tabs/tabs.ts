@@ -12,5 +12,5 @@ import { ProfileOrganizerPage } from '../profile/profile-organizer/profile.organ
 export class TabsPage {
     newsPage = NewsViewArtistPage;
     dashboardPage = DashboardPage;
-    profilePage = ProfileArtistPage;
+    profilePage = ProfileOrganizerPage;
 }
